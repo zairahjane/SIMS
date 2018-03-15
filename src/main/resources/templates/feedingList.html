@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Manage Feeding</title>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+	<nav class="nav navbar-default navbar-fixed-top"
+		th:include="index::nav"></nav>
+
+	<div class="page-header container">
+		<h1>Manage Feeding</h1>
+	</div>
+	<section class="container">
+		<a th:href="@{'/swine/'+${swine.swineID}+'/feeding/add'}" >Add Feeeding</a><br />
+		<!-- Search form -->
+		<label for="selectSearchBy">Search by</label> <select
+			name="selectSearchBy" id="selectSearchBy">
+			<option selected="selected" disabled="disabled">Select</option>
+			<option value="weightDate">Feeding Date</option>
+			<option value="feedingTime">Feeding Time</option>
+			<option value="foodType">Food Type</option>
+			<option value="foodAmount">Food Amount</option>
+		</select> <input type="search" name="searchValue" id="inputSearch"
+			disabled="disabled" />
+		<button id="btnSearch" disabled="disabled" type="button">
+			<span class=" glyphicon glyphicon-search"></span>
+		</button>
+		<br />
+		<!-- Page size controls -->
+		<label for="selectPageSize">Show</label> <select id="selectPageSize">
+			<option>5</option>
+			<option>10</option>
+			<option selected="selected">20</option>
+			<option>50</option>
+		</select> <span>entries</span>
+
+		<!-- Table -->
+		<table id="dtUpdatable" class="table">
+			<tr>
+				<th>FeedingID</th>
+				<th>FeedingDate</th>
+				<th>FeedingTime</th>
+				<th>FoodType</th>
+				<th>FoodAmount</th>
+				<th>Action</th>
+			</tr>
+		</table>
+
+		<!-- Pagination -->
+		<ul id="pagination" class="pager"></ul>
+		<br />
+	</section>
+
+	<!-- bootstrap -->
+	<script th:src="@{/jquery-3.2.1.min.js}" type="text/javascript"></script>
+	<script th:src="@{/bootstrap/js/bootstrap.min.js}"
+		type="text/javascript"></script>
+
+	<!-- pagination -->
+	<script th:src="@{/js/feedingTable.js}" type="module"></script>
+
+</body>
+</html>

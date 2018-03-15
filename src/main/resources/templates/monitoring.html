@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Swine Monitoring</title>
+
+</head>
+<body>
+
+<h2>Swine Monitoring</h2>
+    <div>
+    //TODO
+    //ayaw nyang maredirect sa weightList
+      <a href="#" th:href="@{/swine/{swine}/weightList}">Weight</a><br/>
+      //TODO pag nag feeding o medication sana un swine automatic ng magsubract sa quantity ng food o medicine inventory
+      <a href="#" th:href="@{/swine/{swine}/feeedingList}">Feeding</a><br/>
+      <a href="#" th:href="@{/swine/{swine}/medicationList}">Medication</a><br/>
+
+      //TODO
+      //ung link ng pregnancy at breeding sana eh mag appear lang sa monitoring
+      //pag female ung swine
+      <a href="#" th:href="@{/swine/{swine}/pregnancyList}">Pregnancy</a><br/>
+      <a href="#" th:href="@{/swine/{swine}/breedingList}">Breeding</a><br/>
+    </div>
+//TODO dun sa medication at feeding controller, panu un pag add at save kc dlawa ung manytoone nya
+
+</body>
+</html>

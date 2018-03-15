@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Add Swine Pregnancy</title>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+	<nav th:include="index::nav"
+		class="nav navbar-default navbar-fixed-top"></nav>
+	<div class="page-header container">
+		<h1>Swine Pregnancy</h1>
+	</div>
+	<section class="container">
+		<!-- Item form  -->
+		<form method="post" th:object="${pregnancy}" th:action="@{'/swine/'+${swine.swineID}+'/pregnancy/add'}"
+			class="form-horizontal">
+			<input type="hidden" th:field="*{pregnancyID}" />
+			<div class="form-group">
+				<label for="pregnancyDate" class="col-sm-2 control-label">Pregnancy Date</label>
+				<div class="col-sm-8">
+					<input type="Date" class="form-control" th:field="*{pregnancyDate}"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default">Submit</button>
+				</div>
+			</div>
+		</form>
+	</section>
+
+	<!-- Bootstrap -->
+	<script type="text/javascript" th:src="@{/jquery-3.2.1.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>
+

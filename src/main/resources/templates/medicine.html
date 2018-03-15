@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title th:text="${pageLabel}"></title>
+  </head>
+  <body>
+  	<!-- Medicine form  -->
+	<form method="post" th:object="${medicine}">
+		<p>
+			<label for="type">Type</label> 
+			<input type="text" th:field="*{type}" name="type"  />
+		</p>
+		<p>
+			<label for="name">Name</label> 
+			<input type="text" th:field="*{name}" name="name"  />
+		</p>
+		<p>
+			<label for="quantity">Quantity</label> 
+			<input type="number" th:field="*{quantity}" name="quantity"  />
+		</p>
+		<p>
+			<label for="expdate">Expdate</label> 
+			<input type="date" th:field="*{expdate}" name="expdate"  />
+		</p>
+		<p>
+			<label for="description">Description</label> <br />
+			<textarea cols="20" rows="5" th:field="*{description}"></textarea>
+		</p>
+			<input type="submit" name="submit" value="Submit" />
+	</form>
+</body>
+</html>

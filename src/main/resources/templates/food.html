@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title th:text="${pageLabel}"></title>
+  </head>
+  <body>
+  	<!-- Food form  -->
+	<form method="post" th:object="${food}">
+		<p>
+			<label for="prodname">Prodname</label> 
+			<input type="text" th:field="*{prodname}" name="prodname"  />
+		</p>
+		<p>
+			<label for="classification">Classification</label> 
+			<input type="text" th:field="*{classification}" name="classification"  />
+		</p>
+		<p>
+			<label for="quantity">Quantity</label> 
+			<input type="number" th:field="*{quantity}" name="quantity"  />
+		</p>
+		<p>
+			<label for="weight">Weight</label> 
+			<input type="text" th:field="*{weight}" name="weight"  />
+		</p>
+		<p>
+			<label for="expdate">Expdate</label> 
+			<input type="date" th:field="*{expdate}" name="expdate"  />
+		</p>
+		<p>
+			<label for="description">Description</label> <br />
+			<textarea cols="20" rows="5" th:field="*{description}"></textarea>
+		</p>
+			<input type="submit" name="submit" value="Submit" />
+	</form>
+</body>
+</html>
